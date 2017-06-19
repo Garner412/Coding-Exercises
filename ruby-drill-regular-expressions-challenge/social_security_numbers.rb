@@ -10,14 +10,17 @@ end
 
 # Find and return a Social Security Number.
 def grab_ssn(string)
+  string.match(/\d{3}-\d{2}-\d{4}/).to_s
 end
 
 # Find and return all Social Security Numbers.
 def grab_all_ssns(string)
+  string.scan(/\d{3}-\d{2}-\d{4}/)
 end
 
 # Obfuscate all Social Security Numbers. Example: XXX-XX-4430.
-def hide_all_ssns(string)
+def hide_all_ssns(string)\
+  string.gsub(/\d{3}-\d{2}/,"XXX-XX")
 end
 
 # Format all Social Security Numbers to use single dashes for delimiters:
