@@ -4,6 +4,8 @@
 
 # Determine whether a string contains a Social Security Number.
 def has_ssn?(string)
+  ssn_index = string =~/\d{3}-\d{2}-\d{4}/
+  !!ssn_index
 end
 
 # Find and return a Social Security Number.
